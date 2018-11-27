@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/engine.js":
+/*!***********************!*\
+  !*** ./src/engine.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Engine; });\nclass Engine {\r\n\tconstructor() {\r\n\t\tdocument.body.style.margin = \"0px\";\r\n\t\tdocument.body.style.overflow = \"hidden\";\r\n\t\tthis.canvas = document.createElement(\"canvas\");\r\n\t\tthis.canvas.width = window.innerWidth;\r\n\t\tthis.canvas.height = window.innerHeight;\r\n\t\tdocument.body.appendChild(this.canvas);\r\n\r\n\t\tthis.ctx = this.canvas.getContext(\"2d\");\r\n\r\n\t\tthis.lastTime = new Date().getTime();\r\n\r\n\t\twindow.requestAnimationFrame(this.loop.bind(this));\r\n\t}\r\n\r\n\tloop() {\r\n\t\tlet time = new Date().getTime();\r\n\t\tlet dt = (time - this.lastTime) / 1000;\r\n\r\n\t\tthis.ctx.fillStyle = \"#303030\";\r\n\t\tthis.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);\r\n\r\n\t\tthis.lastTime = this.time;\r\n\t\twindow.requestAnimationFrame(this.loop.bind(this));\r\n\t}\r\n}\n\n//# sourceURL=webpack:///./src/engine.js?");
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("document.body.style.margin = \"0px\";\ndocument.body.style.overflow = \"hidden\";\nlet canvas = document.createElement(\"canvas\");\ncanvas.width = window.innerWidth;\ncanvas.height = window.innerHeight;\ndocument.body.appendChild(canvas);\n\nlet ctx = canvas.getContext(\"2d\");\n\nwindow.requestAnimationFrame(loop);\n\nlet ball = {\n    position: {\n        x: 100,\n        y: 100\n    },\n    velocity: {\n        x: 500,\n        y: 500\n    }\n};\n\nlet lastTime = new Date().getTime();\nfunction loop() {\n    let time = new Date().getTime();\n    let dt = (time - lastTime) / 1000;\n\n    ball.position.x += ball.velocity.x * dt;\n    ball.position.y += ball.velocity.y * dt;\n\n    if (ball.position.x < 50)\n        ball.velocity.x *= -1;\n    if (ball.position.x > canvas.width - 50)\n        ball.velocity.x *= -1;\n    if (ball.position.y < 50)\n        ball.velocity.y *= -1;\n    if (ball.position.y > canvas.height - 50)\n        ball.velocity.y *= -1;\n\n    ctx.fillStyle = \"#303030\";\n    ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n    ctx.fillStyle = \"#ff1111\";\n    ctx.beginPath();\n    ctx.arc(ball.position.x, ball.position.y, 50, 0, 2 * Math.PI);\n    ctx.fill();\n\n    lastTime = time;\n    window.requestAnimationFrame(loop);\n}\n\n//# sourceURL=webpack:///./src/main.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _engine__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./engine */ \"./src/engine.js\");\n\r\n\r\nlet list = [\"poule.mp3\", \"chassedeau.mp3\"];\r\n\r\nlet engine = new _engine__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\n\r\n$(\"#randomStart\").click(function() {\r\n\tvar randomSong = list[Math.floor(Math.random() * list.length)];\r\n\tvar audio = new Audio(`./song/${randomSong}`);\r\n\t\r\n\taudio.play();\r\n\taudio.addEventListener(\"ended\", function(){\r\n\t\taudio.currentTime = 0;\r\n\t\tconsole.log(\"Ended\");\r\n\t\tlocation.reload();\r\n\t});\r\n\t$(\"#randomStart\").replaceWith('<button onclick=\"location.reload()\" class=\"button btn btn-danger\">Stop</button>');\r\n});\r\n\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 
