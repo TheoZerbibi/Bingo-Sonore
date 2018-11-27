@@ -10,6 +10,8 @@ export default class Engine {
 		this.ctx = this.canvas.getContext("2d");
 
 		this.lastTime = new Date().getTime();
+		this.backgroundImage = new Image(); 
+		this.backgroundImage.src = 'https://images.megapixl.com/4992/49923526.jpg';
 
 		window.requestAnimationFrame(this.loop.bind(this));
 	}
@@ -18,7 +20,7 @@ export default class Engine {
 		let time = new Date().getTime();
 		let dt = (time - this.lastTime) / 1000;
 
-		this.ctx.fillStyle = "#303030";
+		this.ctx.drawImage(this.backgroundImage, 0, 0);
 		this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
 		this.lastTime = this.time;
