@@ -1,6 +1,6 @@
 LANCER LE BINGO SONORE
 
-Dans le dossier code, vous trouverez un fichier nommé "!Démarrer le Bingo".
+Dans le dossier Code, vous trouverez un fichier nommé "!Démarrer le Bingo".
 Il vous suffit de double cliquer dessus.
 Une page Internet sera automatiquement ouverte, une autre fenêtre avec un fond noir, c'est cette fenêtre
 fera fonctionner le Bingo.
