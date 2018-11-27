@@ -1,0 +1,12 @@
+LANCER LE BINGO SONORE
+
+Dans le dossier code, vous trouverez un fichier nommé "!Démarrer le Bingo".
+Il vous suffit de double cliquer dessus.
+Une page Internet sera automatiquement ouverte, une autre fenêtre avec un fond noir, c'est cette fenêtre
+fera fonctionner le Bingo.
+
+Une fois la fenêtre Internet ouverte, le site devrait d'abord afficher "Ce site est inaccessible", il faut
+attendre quelques secondes le temps que tout se lance.
+
+Une fois le site lancé, il y aura  un bouton "Start", il suffit de cliquer dessus pour lancer le Bingo.
+Il faudra re-cliquer dessus à chaque fois pour relancer un son.
