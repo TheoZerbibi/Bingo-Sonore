@@ -1,20 +1,8 @@
 import Engine from "./engine"
-const list = require("./list.json")
+import Bingo from "./bingo";
+
+let bingo = new Bingo;
 let engine = new Engine;
-
-console.log(Object.keys(list));
-function Count(obj) {
-	var nbr = 0;
-	for (var property in obj) {
-		if (Object.prototype.hasOwnProperty.call(obj, property)) {
-				nbr++;
-		}
-	}
-	return (nbr);
-}
-
-var listSize = Count(list);
-console.log("List Size : " + listSize);
 
 $("#randomStart").click(function() {
 
