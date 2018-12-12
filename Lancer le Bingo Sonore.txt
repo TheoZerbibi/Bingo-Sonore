@@ -1,4 +1,4 @@
-\LANCER LE BINGO SONORE/
+/!\ LANCER LE BINGO SONORE /!\
 
 !! IMPORTANT !!
 
@@ -15,9 +15,11 @@ fera fonctionner le Bingo.
 
 Une fois la fenêtre Internet ouverte, le site devrait d'abord afficher "Ce site est inaccessible", il faut
 attendre le temps que tout se lance, raifraichissait la page de temps en temps jusqu'a que le site apparaisse.
+(Si le fond de la page est blanc, rafraichissait la page).
 
 Une fois le site lancé, il y aura  un bouton "Start", il suffit de cliquer dessus pour lancer le Bingo.
 Il faudra re-cliquer dessus à chaque fois pour relancer un son.
+
 
 #Developpement Théo.Z
 #Language JS typé TypeScript
