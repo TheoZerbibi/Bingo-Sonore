@@ -4,6 +4,8 @@
 
 Avant de faire quoi-que ce soit, il faut impérativement que Node.JS soit installé sur l'ordinateur.
 Lien de téléchagement : https://nodejs.org/dist/v10.13.0/node-v10.13.0-x64.msi
+Ainsi que Git.
+Lien de téléchagement : https://git-scm.com/download/win
 
 
 Dans le dossier Code, vous trouverez un fichier nommé "!Démarrer le Bingo".
@@ -12,7 +14,11 @@ Une page Internet sera automatiquement ouverte, une autre fenêtre avec un fond 
 fera fonctionner le Bingo.
 
 Une fois la fenêtre Internet ouverte, le site devrait d'abord afficher "Ce site est inaccessible", il faut
-attendre quelques secondes le temps que tout se lance.
+attendre le temps que tout se lance, raifraichissait la page de temps en temps jusqu'a que le site apparaisse.
 
 Une fois le site lancé, il y aura  un bouton "Start", il suffit de cliquer dessus pour lancer le Bingo.
 Il faudra re-cliquer dessus à chaque fois pour relancer un son.
+
+#Developpement Théo.Z
+#Language JS typé TypeScript
+#Date 2018/2019
