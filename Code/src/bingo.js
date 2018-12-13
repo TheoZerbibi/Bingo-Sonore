@@ -26,7 +26,7 @@ export default class Bingo {
 			const randomSong = Object.keys(this.list)[Math.floor(Math.random() * this.listSize)];
 			console.log(randomSong);
 			if (randomSong === 'poule') {
-				if (this.list.poule >= 1) {
+				if (this.list.poule > 0) {
 					this.bingo();
 				} else {
 					this.list.poule += 1;
@@ -34,7 +34,7 @@ export default class Bingo {
 					console.log(this.CountSong);
 				}
 			} else if (randomSong === 'chassedeau') {
-				if (this.list.chassedeau >= 1) {
+				if (this.list.chassedeau > 0) {
 					this.bingo();
 				} else {
 					this.list.chassedeau += 1;
@@ -51,7 +51,7 @@ export default class Bingo {
 				setTimeout(() => {
 					this.buttonStart = document.getElementById("randomStart").style.display = 'block';
 					this.buttonStop = document.getElementById("randomStop").style.display = 'none';
-				}, 80000);
+				}, 10000);
 			});
 			if (nbr >= 1) {
 			this.audio.pause();
@@ -61,7 +61,7 @@ export default class Bingo {
 			setTimeout(() => {
 				this.buttonStart = document.getElementById("randomStart").style.display = 'block';
 				this.buttonWait = document.getElementById("wait").style.display = 'none';
-			}, 8000);
+			}, 10000);
 				console.log("Ended");
 				nbr = 0;
 			}
