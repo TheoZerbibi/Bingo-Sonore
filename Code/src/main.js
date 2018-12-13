@@ -3,11 +3,14 @@ import Bingo from "./bingo";
 
 let bingo = new Bingo;
 let engine = new Engine;
+let nbr = 0;
 
 $("#randomStart").click(function() {
-	bingo.start();
+	bingo.bingo(nbr);
 });
 
 $("#randomStop").click(function() {
-	bingo.stop();
+	nbr += 1;
+	bingo.bingo(nbr);
+	nbr = 0;
 });
