@@ -6,6 +6,7 @@ Avant de faire quoi-que ce soit, il faut impérativement que Node.JS soit instal
 Lien de téléchagement : https://nodejs.org/dist/v10.13.0/node-v10.13.0-x64.msi
 Ainsi que Git.
 Lien de téléchagement : https://git-scm.com/download/win
+Une connexion internet est obligatoire.
 
 
 Dans le dossier Code, vous trouverez un fichier nommé "!Démarrer le Bingo".
