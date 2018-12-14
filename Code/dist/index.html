@@ -17,8 +17,18 @@
 
 	<button id="randomStart" class="button btn btn-success">Start</button>
 	<button id="randomStop" class="button btn btn-danger" style="display: none">Stop</button>
-	<button id="wait" disabled class="button btn btn-warning" style="display:none">Attendez</button>
+	<button id="wait" disabled class="buttonWait btn btn-warning" style="display:none">Attendez</button>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<div id="timer" class="item html">
+		<h2>0</h2>
+		<svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+		<g>
+			<title>Layer 1</title>
+			<circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="orange" fill="none"/>
+		</g>
+		</svg>
+	</div>
+	<h1 contenteditable spellcheck="true">bingo<br>Sonore</h1>
 		<script src="bundle.js"></script>
-			
 </body>
 </html>
