@@ -11,7 +11,7 @@ export default class Engine {
 
 		this.lastTime = new Date().getTime();
 		this.backgroundImage = new Image(); 
-		this.backgroundImage.src = 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/3246865/1360/906/m1/fpnw/wm1/ljjxrnajzgexcvyjh8mfwuk25vimoqepobo6pd9euhe8l26bpeqb8cpi0amlcv34-.jpg?1505315766&s=a3c4396d54f7d13486bf7f4ebbfbf2ee';
+		this.backgroundImage.src = 'https://dustedoff.files.wordpress.com/2011/07/pic19.png';
 
 		window.requestAnimationFrame(this.loop.bind(this));
 	}
