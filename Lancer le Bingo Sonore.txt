@@ -9,7 +9,7 @@ Lien de téléchagement : https://git-scm.com/download/win
 Une connexion internet est obligatoire.
 
 
-(Ré-écrire comment utilisz le Bingo.)
+(Ré-écrire comment utilisez le Bingo.)
 
 
 #Developpement Théo.Z
