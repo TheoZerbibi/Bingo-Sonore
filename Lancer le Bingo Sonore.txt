@@ -13,5 +13,5 @@ Une connexion internet est obligatoire.
 
 
 #Developpement Théo.Z
-#Language JS typé TypeScript
+#Language JS sous Electron.JS
 #Date 2018/2019
