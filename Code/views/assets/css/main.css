@@ -1,5 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+
+body {
+	overflow: scroll;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	background:url('https://steamusercontent-a.akamaihd.net/ugc/2438013375536940927/D370DBF7BFC83ED36F783F08A598FFF3E71A1D61/');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
 .button {
 	position: absolute;
 	left:50%;

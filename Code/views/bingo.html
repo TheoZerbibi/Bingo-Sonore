@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+	<html lang="fr-FR">
+	<head>
+		<meta charset="utf-8">
+		<title>Bingo</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+
+		<!-- link css -->
+		<link href="./assets/css/main.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+
+		<!-- link script -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	</head>
+	<body>
+		<button id="randomStart" class="button btn btn-success">Start</button>
+		<button id="randomStop" class="button btn btn-danger" style="display: none">Stop</button>
+		<button id="wait" disabled class="buttonWait btn btn-warning" style="display:none">Attendez</button>
+
+		<div id="timer" class="item html">
+			<h2>0</h2>
+			<svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+			<g>
+				<title>Layer 1</title>
+				<circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#565656" fill="none"/>
+			</g>
+			</svg>
+		</div>
+
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
