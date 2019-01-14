@@ -26,6 +26,7 @@ function start() {
 		if (list.poule > 0) {
 			console.log('Reload');
 			start();
+			return ;
 		} else {
 			list.poule += 1;
 			CountSong += 1;
@@ -35,6 +36,7 @@ function start() {
 		if (list.chassedeau > 0) {
 			console.log('Reload')
 			start();
+			return ;
 		} else {
 			list.chassedeau += 1;
 			CountSong += 1;
