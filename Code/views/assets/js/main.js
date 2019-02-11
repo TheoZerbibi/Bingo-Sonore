@@ -1,4 +1,4 @@
-let list = {"poule":0,"chassedeau":0};
+let list = {"poule":0,"chassedeau":0, "cheval":0};
 let CountSong = 0;
 
 function Count(obj) {
@@ -30,7 +30,6 @@ function start() {
 		} else {
 			list.poule += 1;
 			CountSong += 1;
-			console.log(CountSong);
 		}
 	} else if (randomSong === 'chassedeau') {
 		if (list.chassedeau > 0) {
@@ -40,9 +39,19 @@ function start() {
 		} else {
 			list.chassedeau += 1;
 			CountSong += 1;
-			console.log(CountSong);
+		} 
+	} else if (randomSong === 'cheval') {
+		if (list.cheval > 0) {
+			console.log('Reload');
+			start();
+			return ;
+		} else {
+			list.cheval += 1;
+			CountSong += 1;
 		}
 	}
+
+	console.log(CountSong);
 	audio = new Audio(`./assets/song/${randomSong}.mp3`);
 	audio.play();
 	audio.addEventListener("ended", function() {
