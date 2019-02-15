@@ -1,4 +1,4 @@
-let list = ["poule","chassedeau","cheval"];
+let list = ["poule","chassedeau","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"];
 let CountSong = 0;
 let Song = new Map();
 
@@ -22,8 +22,6 @@ function start() {
 
 	const randomSong = list[Math.floor(Math.random() * listSize)];
 
-	console.log(randomSong);
-
 	if (Song.get(randomSong)) {
 		start();
 		return ;
@@ -32,9 +30,9 @@ function start() {
 	document.getElementById("randomStart").style.display = 'none';
 	document.getElementById("randomStop").style.display = 'block';
 
-	console.log(Song);
-
 	CountSong++;
+	console.log(CountSong);
+	console.log(randomSong);
 
 	audio = new Audio(`./assets/song/${randomSong}.mp3`);
 	audio.play();
