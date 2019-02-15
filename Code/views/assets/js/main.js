@@ -1,5 +1,6 @@
-let list = {"poule":0,"chassedeau":0, "cheval":0};
+let list = ["poule","chassedeau","cheval"];
 let CountSong = 0;
+let Song = new Map();
 
 function Count(obj) {
 	var nbr = 0;
@@ -16,42 +17,25 @@ console.log("List Size : " + listSize);
 let audio = {};
 
 function start() {
-	if (CountSong >= listSize) 
+	if (CountSong >= listSize)
 		return alert('Tous les sons ont été joué !');
-	let buttonStart = document.getElementById("randomStart").style.display = 'none';
-	let buttonStop = document.getElementById("randomStop").style.display = 'block';	
-	const randomSong = Object.keys(list)[Math.floor(Math.random() * listSize)];
-	console.log(randomSong);
-	if (randomSong === 'poule') {
-		if (list.poule > 0) {
-			console.log('Reload');
-			start();
-			return ;
-		} else {
-			list.poule += 1;
-			CountSong += 1;
-		}
-	} else if (randomSong === 'chassedeau') {
-		if (list.chassedeau > 0) {
-			console.log('Reload')
-			start();
-			return ;
-		} else {
-			list.chassedeau += 1;
-			CountSong += 1;
-		} 
-	} else if (randomSong === 'cheval') {
-		if (list.cheval > 0) {
-			console.log('Reload');
-			start();
-			return ;
-		} else {
-			list.cheval += 1;
-			CountSong += 1;
-		}
-	}
 
-	console.log(CountSong);
+	const randomSong = list[Math.floor(Math.random() * listSize)];
+
+	console.log(randomSong);
+
+	if (Song.get(randomSong)) {
+		start();
+		return ;
+	}
+	Song.set(randomSong, '.');
+	document.getElementById("randomStart").style.display = 'none';
+	document.getElementById("randomStop").style.display = 'block';
+
+	console.log(Song);
+
+	CountSong++;
+
 	audio = new Audio(`./assets/song/${randomSong}.mp3`);
 	audio.play();
 	audio.addEventListener("ended", function() {
@@ -62,38 +46,13 @@ function start() {
 function stop() {
 	audio.pause();
 	audio.currentTime = 0.0;
-	let buttonWait = document.getElementById("wait").style.display = 'block';
-	let buttonStop = document.getElementById("randomStop").style.display = 'none';
-	timer();
+	document.getElementById("wait").style.display = 'block';
+	document.getElementById("randomStop").style.display = 'none';
 	setTimeout(() => {
-		buttonStart = document.getElementById("randomStart").style.display = 'block';
-		buttonWait = document.getElementById("wait").style.display = 'none';
-	}, 10000);
+		document.getElementById("randomStart").style.display = 'block';
+		document.getElementById("wait").style.display = 'none';
+	}, 3000);
 		console.log("Ended");
-}
-
-function timer() {
-	setTimeout(function() {
-
-		var time = 10;
-		var initialOffset = '440';
-		var i = 1
-	
-		$('.circle_animation').css('stroke-dashoffset', initialOffset-(1*(initialOffset/time)));
-		let timer = document.getElementById("timer").style.display = 'block';
-	
-		var interval = setInterval(function() {
-				$('h2').text(i);
-				if (i == time) {
-					clearInterval(interval);
-					timer = document.getElementById("timer").style.display = 'none';
-					i = 1;
-					return;
-				}
-				$('.circle_animation').css('stroke-dashoffset', initialOffset-((i+1)*(initialOffset/time)));
-				i++;  
-		}, 1000);
-	}, 0)
 }
 
 $("#randomStart").click(function() {

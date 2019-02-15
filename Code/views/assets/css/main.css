@@ -27,7 +27,7 @@ body {
 .buttonWait {
 	position: absolute;
 	left:49%;
-	top:70%;
+	top:50%;
 }
 
 .item {
@@ -44,21 +44,4 @@ body {
 	line-height: 125px;
 	width: 100%;
 	color: rgb(51, 51, 51);
-}
-
-svg {
- -webkit-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-}
-
-.circle_animation {
-	stroke-dasharray: 440;
-	stroke-dashoffset: 440;
-	transition: all 1s linear;
-}
-
-:root {
-	font-size: 10px;
-	--neon-text-color: #f40;
-	--neon-border-color: #08f;
 }
