@@ -1,6 +1,8 @@
 vache
 cheval
 chèvre
+chasse d'eau
+poule
 chien
 chat
 pluie
@@ -12,18 +14,16 @@ scie
 moto
 train
 avion
-chasse d'eau
-poule
 enfant
 rire
 pleure
-clap
 clôche
+
 piano
 flûte
 guitare
 singe
-bruit pas
+bruit d'pas
 ronflement
 trompette
 porte claque
@@ -52,3 +52,4 @@ craie
 mouche
 bouchon
 maracasses
+clap

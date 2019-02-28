@@ -1,4 +1,5 @@
-let list = ["poule","chassedeau","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"];
+const fs = require('fs')
+let list = ["poule","chassedeau","cheval"/*,"chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"*/];
 let CountSong = 0;
 let Song = new Map();
 
@@ -17,8 +18,27 @@ console.log("List Size : " + listSize);
 let audio = {};
 
 function start() {
-	if (CountSong >= listSize)
-		return alert('Tous les sons ont été joué !');
+	if (CountSong >= listSize) {
+		fs.readFile('./songlist.txt', 'utf8', function (err,data) {
+			if (err) {
+				return console.log(err);
+			}
+			console.log(data);
+			document.getElementById('SongList').innerHTML = data;
+			fs.writeFile('./songlist.txt', ``, (err) => {
+				if (err) {
+					return console.log(err);
+				}
+			});
+		});
+		document.getElementById("randomStart").style.display = 'none';
+		document.getElementById("finish").style.display = 'block';
+		document.getElementById("SongList").style.display = 'block';
+		console.log(Song);
+
+		// document.write(JSON.stringify(Song));
+		return ;
+	}
 
 	const randomSong = list[Math.floor(Math.random() * listSize)];
 
@@ -26,11 +46,17 @@ function start() {
 		start();
 		return ;
 	}
-	Song.set(randomSong, '.');
+	CountSong++;
+	Song.set(randomSong, CountSong);
+	console.log(Song);
+	fs.appendFile('./songlist.txt', `${CountSong} - ${randomSong}\n`, (err) => {
+		if (err) {
+			return console.log(err);
+		}
+	});
 	document.getElementById("randomStart").style.display = 'none';
 	document.getElementById("randomStop").style.display = 'block';
 
-	CountSong++;
 	console.log(CountSong);
 	console.log(randomSong);
 
