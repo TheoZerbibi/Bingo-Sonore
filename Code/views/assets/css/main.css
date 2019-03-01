@@ -24,6 +24,18 @@ body {
 	top:50%;
 }
 
+.button_continue {
+	position: absolute;
+	left:54%;
+	top:75%;
+}
+
+.button_end {
+	position: absolute;
+	left:45%;
+	top:75%;
+}
+
 .buttonWait {
 	position: absolute;
 	left:49%;
@@ -32,7 +44,7 @@ body {
 
 .buttonBingo {
 	position: absolute;
-	left:46%;
+	left:45%;
 	top:80%;
 	display: block;
 	-moz-box-shadow: 0px 17px 25px -7px #7d6c00;
@@ -98,6 +110,8 @@ body {
 .box {
 	position: absolute;
 	visibility: hidden;
+	border: 2px solid rgba(34, 34, 34, 0.452);
+	border-radius: 5px;
 	left: 45%;
 	top: 25%;
 	height: 49vh;
@@ -107,7 +121,7 @@ body {
 	color: rgba(255, 255, 255, 0.800);
 	scrollbar-face-color: gold;
 	font-family: sans-serif;
-	padding: 2vh;
+	padding: 4vh;
 	font-size: 3vh;
 }
 
