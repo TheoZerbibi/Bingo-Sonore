@@ -30,6 +30,55 @@ body {
 	top:50%;
 }
 
+.buttonBingo {
+	position: absolute;
+	left:46%;
+	top:80%;
+	display: block;
+	-moz-box-shadow: 0px 17px 25px -7px #7d6c00;
+	-webkit-box-shadow: 0px 17px 25px -7px #7d6c00;
+	box-shadow: 0px 17px 25px -7px #7d6c00;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e39000), color-stop(1, #dbbe00));
+	background:-moz-linear-gradient(top, #e39000 5%, #dbbe00 100%);
+	background:-webkit-linear-gradient(top, #e39000 5%, #dbbe00 100%);
+	background:-o-linear-gradient(top, #e39000 5%, #dbbe00 100%);
+	background:-ms-linear-gradient(top, #e39000 5%, #dbbe00 100%);
+	background:linear-gradient(to bottom, #e39000 5%, #dbbe00 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e39000', endColorstr='#dbbe00',GradientType=0);
+	background-color:#e39000;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:4px solid #e09807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:28px;
+	font-weight:bold;
+	padding:15px 20px;
+	text-decoration:none;
+	text-shadow:-3px 0px 0px #fc8b00;
+}
+
+.buttonBingo:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dbbe00), color-stop(1, #e39000));
+	background:-moz-linear-gradient(top, #dbbe00 5%, #e39000 100%);
+	background:-webkit-linear-gradient(top, #dbbe00 5%, #e39000 100%);
+	background:-o-linear-gradient(top, #dbbe00 5%, #e39000 100%);
+	background:-ms-linear-gradient(top, #dbbe00 5%, #e39000 100%);
+	background:linear-gradient(to bottom, #dbbe00 5%, #e39000 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbbe00', endColorstr='#e39000',GradientType=0);
+	background-color:#dbbe00;
+	color: rgb(206, 206, 206);
+}
+
+.buttonBingo:active {
+	position: absolute;
+	left:46%;
+	top:81%;
+}
+
 .item {
 	position: absolute;
 	float: left;
@@ -44,4 +93,42 @@ body {
 	line-height: 125px;
 	width: 100%;
 	color: rgb(51, 51, 51);
+}
+
+.box {
+	position: absolute;
+	visibility: hidden;
+	left: 45%;
+	top: 25%;
+	height: 49vh;
+	width: 30vh;
+	overflow: auto;
+	background-color: rgba(64, 65, 64, 0.521);
+	color: rgba(255, 255, 255, 0.800);
+	scrollbar-face-color: gold;
+	font-family: sans-serif;
+	padding: 2vh;
+	font-size: 3vh;
+}
+
+#SongList::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: rgba(88, 88, 88, 0.411);
+}
+
+#SongList::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: rgba(245, 245, 245, 0);
+}
+
+#SongList::-webkit-scrollbar-thumb {
+	background: rgba(27, 27, 27, 0.493);
+	border-radius: 10px;
+}
+
+#SongList::-webkit-scrollbar-thumb:hover {
+	background: #0e0d0d67;
 }

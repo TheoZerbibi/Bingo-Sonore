@@ -1,5 +1,5 @@
 const fs = require('fs')
-let list = ["poule","chassedeau","cheval"/*,"chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"*/];
+let list = ["piano","guitare","bouchon","poule","chassedeau","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"];
 let CountSong = 0;
 let Song = new Map();
 
@@ -19,24 +19,8 @@ let audio = {};
 
 function start() {
 	if (CountSong >= listSize) {
-		fs.readFile('./songlist.txt', 'utf8', function (err,data) {
-			if (err) {
-				return console.log(err);
-			}
-			console.log(data);
-			document.getElementById('SongList').innerHTML = data;
-			fs.writeFile('./songlist.txt', ``, (err) => {
-				if (err) {
-					return console.log(err);
-				}
-			});
-		});
-		document.getElementById("randomStart").style.display = 'none';
-		document.getElementById("finish").style.display = 'block';
-		document.getElementById("SongList").style.display = 'block';
+		data();
 		console.log(Song);
-
-		// document.write(JSON.stringify(Song));
 		return ;
 	}
 
@@ -49,7 +33,7 @@ function start() {
 	CountSong++;
 	Song.set(randomSong, CountSong);
 	console.log(Song);
-	fs.appendFile('./songlist.txt', `${CountSong} - ${randomSong}\n`, (err) => {
+	fs.appendFile('./songlist.txt', `${CountSong} - ${randomSong}<br>`, (err) => {
 		if (err) {
 			return console.log(err);
 		}
@@ -79,10 +63,46 @@ function stop() {
 		console.log("Ended");
 }
 
+function end() {
+	fs.writeFile('./songlist.txt', ``, (err) => {
+		if (err) {
+			return console.log(err);
+		}
+	});
+	CountSong = 0;
+}
+
+function data() {
+	audio.pause();
+	audio.currentTime = 0.0;
+	document.getElementById("randomStart").style.display = 'none';
+	document.getElementById("finish").style.display = 'block';
+	document.getElementById("SongList").style.visibility = 'visible';
+	document.getElementById("buttonBingo").style.display = 'none';
+	fs.readFile('./songlist.txt', 'utf8', function (err,data) {
+		if (err) {
+			return console.log(err);
+		}
+		console.log(data);
+		document.getElementById('SongList').innerHTML = data.bold();
+	});
+}
+
+function bingo() {
+	if (CountSong < 1) {
+		return alert("Impossible, 10 sons doivent être joués.")
+	}
+	data();
+}
+
 $("#randomStart").click(function() {
 	start();
 });
 
 $("#randomStop").click(function() {
 	stop();
+});
+
+$("#buttonBingo").click(function() {
+	bingo();
 });
