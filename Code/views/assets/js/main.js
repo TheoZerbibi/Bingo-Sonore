@@ -1,5 +1,5 @@
 const fs = require('fs')
-let list = ["singe","grenouille","canard","elephant","cochon","lion","mouche","orage"/*"flute","trompette","tambour","pendule","feu","piano","guitare","bouchon","poule","chassedeau","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"*/];
+let list = ["aspirateur","sechecheveux","reveil","maracasses","enfant","pas"/*,"clap","singe","grenouille","canard","elephant","cochon","lion","mouche","orage","flute","trompette","tambour","pendule","feu","piano","guitare","bouchon","poule","chassedeau","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"*/];
 let CountSong = 0;
 let Song = new Map();
 let lock = 0;
