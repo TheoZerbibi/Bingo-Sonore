@@ -42,6 +42,12 @@ body {
 	top:50%;
 }
 
+.buttonReplay {
+	position: absolute;
+	left:49.2%;
+	top:57%;
+}
+
 .buttonBingo {
 	position: absolute;
 	left:45%;
