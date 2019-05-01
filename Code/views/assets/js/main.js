@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const fs = require('fs')
 let list = ["atchoum","tirette","ronflement","coca","vague","chips","craie","porte","vaisselle","papier","feuartifice","camion","aspirateur","sechecheveux","reveil","maracasses","enfant","pas","clap","singe","grenouille","canard","elephant","cochon","lion","mouche","orage","flute","trompette","tambour","pendule","feu","piano","guitare","bouchon","poule","chassedeau","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"];
+=======
+const fs = require('fs');
+let list = ["poule","chassedeau"/*,"coca","vague","chips","craie","porte","vaisselle","papier","feuartifice","camion","aspirateur","sechecheveux","reveil","maracasses","enfant","pas","clap","singe","grenouille","canard","elephant","cochon","lion","mouche","orage","flute","trompette","tambour","pendule","feu","piano","guitare","bouchon","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"*/];
+>>>>>>> 1a5e813011432327334745f5af3513efd2c38123
 let CountSong = 0;
+let cache;
 let Song = new Map();
 let lock = 0;
 
@@ -40,6 +46,7 @@ function start() {
 	}
 
 	document.getElementById("randomStart").style.display = 'none';
+	document.getElementById("replay").style.display = 'none';
 	document.getElementById("wait").style.display = 'block';
 	setTimeout(() => {
 		if (document.getElementById("wait").style.display === 'none') 
@@ -61,6 +68,7 @@ function start() {
 	console.log(CountSong);
 	console.log(randomSong);
 
+	cache = randomSong;
 	audio = new Audio(`./assets/song/${randomSong}.mp3`);
 	audio.play();
 	audio.addEventListener("ended", function() {
@@ -80,6 +88,9 @@ function stop() {
 			return ;
 		document.getElementById("randomStart").style.display = 'block';
 		document.getElementById("wait").style.display = 'none';
+		if (CountSong >= 1) {
+			document.getElementById("replay").style.display = 'block';
+		}
 	}, 3000);
 
 		console.log("Ended");
@@ -111,7 +122,7 @@ function data() {
 
 function bingo() {
 	if (CountSong < 1) {
-		return alert("Impossible, au-moins 1 son doit être joué.")
+		return alert("Impossible, au-moins 1 son doit être joué.");
 	}
 
 	data();
@@ -140,12 +151,30 @@ function end() {
 	document.getElementById("list").style.display = 'block';
 	document.getElementById("continue").style.display = 'none';
 	document.getElementById("end").style.display = 'none';
+	document.getElementById("replay").style.display = 'none';
 	document.getElementById("SongList").style.visibility = 'hidden';
 
 	CountSong = 0;
 	lock = 0;
 
 	console.log("Restart");
+}
+
+function replay() {
+	document.getElementById("randomStart").style.display = 'none';
+	document.getElementById("replay").style.display = 'none';
+	document.getElementById("wait").style.display = 'block';
+	setTimeout(() => {
+		if (document.getElementById("wait").style.display === 'none') 
+			return ;
+		document.getElementById("randomStop").style.display = 'block';
+		document.getElementById("wait").style.display = 'none';
+	}, 1500);
+	audio = new Audio(`./assets/song/${cache}.mp3`);
+	audio.play();
+	audio.addEventListener("ended", function() {
+		stop();
+	});
 }
 
 $("#randomStart").click(function() {
@@ -166,6 +195,10 @@ $("#continue").click(function() {
 
 $("#end").click(function() {
 	end();
+});
+
+$("#replay").click(function() {
+	replay();
 });
 
 $("#list").mouseover(function() {
