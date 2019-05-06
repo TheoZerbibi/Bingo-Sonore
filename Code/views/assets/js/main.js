@@ -1,8 +1,12 @@
 const fs = require('fs');
 
-let list = ["poule","chassedeau","coca","vague","chips","craie","porte","vaisselle","papier","feuartifice","camion","aspirateur","sechecheveux","reveil","maracasses","enfant","pas","clap","singe","grenouille","canard","elephant","cochon","lion","mouche","orage","flute","trompette","tambour","pendule","feu","piano","guitare","bouchon","cheval","chevre","vache","chien", "chat", "pluie","oiseau","eau","ane","marteau","scie","moto","train","avion","enfant","rire","pleure","cloche"];
+let list = ["ane","aspirateur","atchoum","avion","bouchon","camion","canard","chassedeau","chat","cheval","chevre",
+	"chien","chips","clap","cloche","coca","cochon","craie","eau","elephant","enfant","feu","feuartifice","flute",
+	"grenouille","guitare","lion","maracasses","marteau","moto","mouche","oiseau","orage","papier","pas","pendule",
+	"piano","pleure","pluie","porte","poule","reveil","rire","ronflement","scie","sechecheveux","singe","tambour",
+	"tirette","train","trompette","vache","vague","vaisselle"];
 let CountSong = 0;
-let cache;
+let cache = null;
 let Song = new Map();
 let lock = 0;
 
